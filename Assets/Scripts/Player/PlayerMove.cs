@@ -4,35 +4,33 @@ namespace Player
 {
   public class PlayerMove : MonoBehaviour
   {
-    private const float QuarterScreen = 0.25f; //1/4 of screen in normalized viewport space
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private Vector3 _targetPosition;
-    [SerializeField] private float _stepValue;
-    private Vector3 _startTouchPosition;
+    private Vector3 _targetPosition;
+    private Vector3 _startMousePosition;
+    private Vector2 _startTouchPosition;
+    private Vector3 _delta, _deltaPosition;
+    private bool _isMove;
 
-    void Update()
+    private void Awake() => 
+      _targetPosition = transform.position;
+
+    private void Update()
     {
       if (Application.isEditor)
       {
         if (Input.GetMouseButtonDown(0))
-          _startTouchPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        {
+          _startMousePosition = Input.mousePosition;
+          _isMove = true;
+        }
+
         if (Input.GetMouseButton(0))
         {
-          _targetPosition += Vector3.forward * _moveSpeed * Time.deltaTime;
-          if ((_startTouchPosition - Camera.main.ScreenToViewportPoint(Input.mousePosition)).x < -QuarterScreen && _targetPosition.x != _stepValue)
-          {
-            _targetPosition.x += _stepValue;
-          }
-          else if ((_startTouchPosition - Camera.main.ScreenToViewportPoint(Input.mousePosition)).x > QuarterScreen && _targetPosition.x != -_stepValue)
-          {
-            _targetPosition.x -= _stepValue;
-          }
-          else if ((_startTouchPosition - Camera.main.ScreenToViewportPoint(Input.mousePosition)).x >= -QuarterScreen
-                   && (_startTouchPosition - Camera.main.ScreenToViewportPoint(Input.mousePosition)).x <= QuarterScreen)
-          {
-            _targetPosition.x = 0;
-          }
-
+          _delta = -(_startMousePosition - Input.mousePosition).normalized;
+          _deltaPosition = Vector3.Lerp(_deltaPosition, _delta, 5f * Time.deltaTime);
+          transform.position += new Vector3(_deltaPosition.x * 0.3f, 0, 0);
+          _startMousePosition = Input.mousePosition;
+          _targetPosition.x = Mathf.Clamp(transform.position.x, -2f, 2f);
           transform.position = _targetPosition;
         }
       }
@@ -41,34 +39,35 @@ namespace Player
         if (Input.touchCount == 1)
         {
           Touch touch = Input.GetTouch(0);
-          _targetPosition += Vector3.forward * _moveSpeed * Time.deltaTime;
+          _isMove = true;
           if (touch.phase == TouchPhase.Began)
-          {
-            _startTouchPosition = Camera.main.ScreenToViewportPoint(touch.position);
-          }
+            _startTouchPosition = touch.position;
           else if (touch.phase == TouchPhase.Moved)
           {
-            Debug.Log(_startTouchPosition);
-            Debug.Log(touch.position);
-            Debug.Log(Camera.main.ScreenToViewportPoint(touch.position));
-            Debug.Log((_startTouchPosition - Camera.main.ScreenToViewportPoint(touch.position)).x);
-            if ((_startTouchPosition - Camera.main.ScreenToViewportPoint(touch.position)).x < -QuarterScreen && _targetPosition.x != _stepValue)
-            {
-              _targetPosition.x += _stepValue;
-            }
-            else if ((_startTouchPosition - Camera.main.ScreenToViewportPoint(touch.position)).x > QuarterScreen && _targetPosition.x != -_stepValue)
-            {
-              _targetPosition.x -= _stepValue;
-            }
-            else if ((_startTouchPosition - Camera.main.ScreenToViewportPoint(touch.position)).x >= -QuarterScreen
-                     && (_startTouchPosition - Camera.main.ScreenToViewportPoint(touch.position)).x <= QuarterScreen)
-            {
-              _targetPosition.x = 0;
-            }
+            _delta = -(_startTouchPosition - touch.position).normalized;
+            _deltaPosition = Vector3.Lerp(_deltaPosition, _delta, 5f * Time.deltaTime);
+            transform.position += new Vector3(_deltaPosition.x * 0.3f, 0, 0);
+            _startTouchPosition = touch.position;
+            _targetPosition.x = Mathf.Clamp(transform.position.x, -2f, 2f);
+            transform.position = _targetPosition;
           }
 
           transform.position = _targetPosition;
         }
+      }
+
+      AutoMove();
+    }
+
+    public void ChangePositionY(float value) => 
+      _targetPosition = new Vector3(_targetPosition.x, transform.position.y + value, _targetPosition.z);
+
+    private void AutoMove()
+    {
+      if (_isMove)
+      {
+        _targetPosition += Vector3.forward * _moveSpeed * Time.deltaTime;
+        transform.position = _targetPosition;
       }
     }
   }

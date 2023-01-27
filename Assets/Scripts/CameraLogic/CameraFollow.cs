@@ -23,15 +23,15 @@ namespace CameraLogic
 
       Vector3 positionWithOffset = new Vector3
       (
-        _target.position.x + _positionOffsetX,
-        _target.position.y + _positionOffsetY,
+        _positionOffsetX,
+        _positionOffsetY,
         _target.position.z + _positionOffsetZ
       );
 
       Vector3 rotationWithOffset = new Vector3
       (
-        _target.rotation.x + _RotationOffsetX,
-        _target.rotation.y + _RotationOffsetY
+        _RotationOffsetX,
+        _RotationOffsetY
       );
 
       transform.rotation = Quaternion.Euler(rotationWithOffset);

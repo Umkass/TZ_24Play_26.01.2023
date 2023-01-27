@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3440883920450368226}
+  - component: {fileID: 4735387240443234767}
+  - component: {fileID: 6832837805094415019}
   m_Layer: 0
   m_Name: Obastacle
   m_TagString: Untagged
@@ -46,6 +48,31 @@ Transform:
   m_Father: {fileID: 8260096708459834603}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4735387240443234767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749541193157513759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62855834d85246879ae5337ce82990cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6832837805094415019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749541193157513759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.0152407, y: 5.0547667, z: 1.0260086}
+  m_Center: {x: 0.0124697685, y: 2.5115848, z: 24.000912}
 --- !u!1 &8554996982032089704
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +313,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8260096708459834603}
     m_Modifications:
+    - target: {fileID: 3588030195717391028, guid: 50a4c5a3ba3f26d469aac1ecdbaefd2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8635103698508136598, guid: 50a4c5a3ba3f26d469aac1ecdbaefd2f,
         type: 3}
       propertyPath: m_Name
