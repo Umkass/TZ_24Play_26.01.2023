@@ -7,6 +7,7 @@ namespace Obstacle
   {
     private int _enteredNumber;
     private int _leavingNumber;
+    
     private void OnTriggerEnter(Collider other)
     {
       if (other.TryGetComponent(out CubeTrigger cubeTrigger)) 

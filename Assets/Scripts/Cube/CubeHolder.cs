@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Data;
 using Player;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ namespace Cube
   public class CubeHolder : MonoBehaviour
   {
     [SerializeField] private PlayerAnimator _animator;
-    [SerializeField] private PlayerMove _player;
+    [SerializeField] private PlayerMove _playerMove;
+    [SerializeField] private PlayerDeath _playerDeath;
     private List<CubeTrigger> cubes = new List<CubeTrigger>();
 
     private void Start() =>
@@ -23,9 +25,9 @@ namespace Cube
 
       Vector3 createPosition = new Vector3
       (
-        _player.transform.position.x,
+        _playerMove.transform.position.x,
         cubes.Last().transform.position.y - 1f,
-        _player.transform.position.z
+        _playerMove.transform.position.z
       );
 
       ChangePlayerPositionY(1f);
@@ -39,27 +41,25 @@ namespace Cube
     {
       cubes.Remove(cube);
       if (cubes.Count == 0)
-        _animator.PlayDeath();
+        _playerDeath.Death();
     }
 
     public void RecalculateCubesPositions()
     {
       if (cubes.Count == 1)
       {
-        cubes[0].transform.position = new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z);
+        cubes[0].transform.position = new Vector3(_playerMove.transform.position.x, transform.position.y, _playerMove.transform.position.z);
         return;
       }
       for (int i = 0; i < cubes.Count - 1; i++)
       {
         if (cubes[i].transform.position.y - 1f != cubes[i + 1].transform.position.y)
-          cubes[i + 1].transform.position = new Vector3(_player.transform.position.x, cubes[i].transform.position.y - 1f, _player.transform.position.z);
+          cubes[i + 1].transform.position = new Vector3(_playerMove.transform.position.x, cubes[i].transform.position.y - 1f, _playerMove.transform.position.z);
       }
     }
 
-    public void ChangePlayerPositionY(float value)
-    {
-      _player.ChangePositionY(value);
-    }
+    public void ChangePlayerPositionY(float value) => 
+      _playerMove.ChangePositionY(value);
 
     private void CreateCube(Vector3 createPosition)
     {

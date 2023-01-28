@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Data;
+using UnityEngine;
 
 namespace Cube
 {
@@ -9,12 +10,12 @@ namespace Cube
     public void Construct(CubeHolder cubeHolder) => 
       _cubeHolder = cubeHolder;
 
-    public void RemoveCube(CubeTrigger gameObject) => 
-      _cubeHolder.RemoveCube(gameObject);
+    public void RemoveCube(CubeTrigger cube) => 
+      _cubeHolder.RemoveCube(cube);
 
     private void OnCollisionEnter(Collision collision)
     {
-      if (collision.gameObject.CompareTag("CubePickup"))
+      if (collision.gameObject.CompareTag(Tags.CubePickup))
       {
         Destroy(collision.gameObject);
         _cubeHolder.AddCube();

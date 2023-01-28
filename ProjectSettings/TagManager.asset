@@ -7,6 +7,7 @@ TagManager:
   - CubePickup
   - Obstacle
   - Cube
+  - Track
   layers:
   - Default
   - TransparentFX
