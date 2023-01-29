@@ -11,58 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/Desktop/TZ_24Play-16.01.23-main/Assets/ExtraAssets/Scripts/LevelGeneratorWall.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Desktop/TZ_24Play-16.01.23-main/Assets/ExtraAssets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../2d/Dunk Shot/DunkShot/Assets/Scripts/BallMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../2d/Dunk Shot/DunkShot/Assets/Scripts/CanvasPoint.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../2d/Dunk Shot/DunkShot/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../2d/Dunk Shot/DunkShot/Assets/Scripts/InputHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../2d/Dunk Shot/DunkShot/Assets/Scripts/UIManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/CanvasElementsMaintainValidPositionsWhenCameraOrthoSizeIsZero.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Framework/Events/Hierarchy/OnTransformParentChanged.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/GameLoopState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/GameStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/ICoroutineRunner.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/LoadLevelState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 1/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/SceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/IState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Services/IService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 2/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 3/Part 1/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Hero/HeroAnimator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Hero/HeroAttack.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Hero/HeroMove.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 5/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 5/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 1 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 1 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 7/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/SceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Data/Layers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Infrastructure/Services/StaticData/StaticDataService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Infrastructure/States/IGameStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Infrastructure/UIServices/Factory/UIFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Infrastructure/UIServices/WindowService/WindowService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/StaticData/Windows/WindowConfig.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/UI/Windows/DeathWindow/DeathWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/UI/Windows/HeroStatsWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/UI/Windows/WindowBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/My Final/apprentices10/Knowledges/src/K-Syndicate Final/Assets/CodeBase/Hero/HeroDeath.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -131,6 +80,7 @@
       <workItem from="1674899285063" duration="203000" />
       <workItem from="1674899571409" duration="16579000" />
       <workItem from="1674983995574" duration="3434000" />
+      <workItem from="1675018303823" duration="720000" />
     </task>
     <servers />
   </component>

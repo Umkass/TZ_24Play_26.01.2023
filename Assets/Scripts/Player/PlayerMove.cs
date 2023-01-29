@@ -7,6 +7,7 @@ namespace Player
   public class PlayerMove : MonoBehaviour
   {
     [SerializeField] private float _moveSpeed;
+    [SerializeField] private GameObject _warpFx;
     private IWindowService _windowService;
     private Vector3 _targetPosition;
     private Vector3 _startMousePosition;
@@ -39,8 +40,11 @@ namespace Player
     public void ChangePositionY(float value) =>
       _targetPosition = new Vector3(_targetPosition.x, transform.position.y + value, _targetPosition.z);
 
-    public void StopMoving() =>
+    public void StopMoving()
+    {
       _isGameOver = true;
+      _warpFx.SetActive(false);
+    }
 
     private void EditorInput()
     {
@@ -98,6 +102,7 @@ namespace Player
     {
       if (_isStart)
       {
+        _warpFx.SetActive(true);
         _windowService.CloseWindow(WindowId.StartWindow);
         _isStart = false;
       }

@@ -257,8 +257,8 @@ MonoBehaviour:
   _positionOffsetX: 4
   _positionOffsetY: 7.25
   _positionOffsetZ: -12.5
-  _RotationOffsetX: 11.25
-  _RotationOffsetY: -13.25
+  _rotationOffsetX: 11.25
+  _rotationOffsetY: -13.25
 --- !u!1 &1132666924
 GameObject:
   m_ObjectHideFlags: 0
