@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Data;
+using Const;
 using Player;
+using Services.AssetManagement;
 using UnityEngine;
 
 namespace Cube
@@ -11,13 +12,13 @@ namespace Cube
     [SerializeField] private PlayerAnimator _animator;
     [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private PlayerDeath _playerDeath;
-    private List<CubeTrigger> cubes = new List<CubeTrigger>();
+    private List<CubeTrigger> _cubes = new();
 
     private void Start() =>
       CreateCube(transform.position);
 
     public int GetCubesCount() =>
-      cubes.Count;
+      _cubes.Count;
 
     public void AddCube()
     {
@@ -26,7 +27,7 @@ namespace Cube
       Vector3 createPosition = new Vector3
       (
         _playerMove.transform.position.x,
-        cubes.Last().transform.position.y - 1f,
+        _cubes.Last().transform.position.y - 1f,
         _playerMove.transform.position.z
       );
 
@@ -39,34 +40,35 @@ namespace Cube
 
     public void RemoveCube(CubeTrigger cube)
     {
-      cubes.Remove(cube);
-      if (cubes.Count == 0)
+      _cubes.Remove(cube);
+      if (_cubes.Count == 0)
         _playerDeath.Death();
     }
 
     public void RecalculateCubesPositions()
     {
-      if (cubes.Count == 1)
+      if (_cubes.Count == 1)
       {
-        cubes[0].transform.position = new Vector3(_playerMove.transform.position.x, transform.position.y, _playerMove.transform.position.z);
+        _cubes[0].transform.position = new Vector3(_playerMove.transform.position.x, transform.position.y, _playerMove.transform.position.z);
         return;
       }
-      for (int i = 0; i < cubes.Count - 1; i++)
+
+      for (int i = 0; i < _cubes.Count - 1; i++)
       {
-        if (cubes[i].transform.position.y - 1f != cubes[i + 1].transform.position.y)
-          cubes[i + 1].transform.position = new Vector3(_playerMove.transform.position.x, cubes[i].transform.position.y - 1f, _playerMove.transform.position.z);
+        if (_cubes[i].transform.position.y - 1f != _cubes[i + 1].transform.position.y)
+          _cubes[i + 1].transform.position = new Vector3(_playerMove.transform.position.x, _cubes[i].transform.position.y - 1f, _playerMove.transform.position.z);
       }
     }
 
-    public void ChangePlayerPositionY(float value) => 
+    public void ChangePlayerPositionY(float value) =>
       _playerMove.ChangePositionY(value);
 
     private void CreateCube(Vector3 createPosition)
     {
-      GameObject cubeGO = Resources.Load(AssetPath.CubePath) as GameObject;
-      GameObject createdCube = Instantiate(cubeGO, createPosition, Quaternion.identity, transform);
+      GameObject cubeGo = Resources.Load(AssetPath.CubePath) as GameObject;
+      GameObject createdCube = Instantiate(cubeGo, createPosition, Quaternion.identity, transform);
       CubeTrigger cubeTrigger = createdCube.GetComponent<CubeTrigger>();
-      cubes.Add(cubeTrigger);
+      _cubes.Add(cubeTrigger);
       cubeTrigger.Construct(this);
     }
   }

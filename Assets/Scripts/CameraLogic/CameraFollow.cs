@@ -10,8 +10,8 @@ namespace CameraLogic
     [SerializeField] private float _positionOffsetZ;
 
     [Header("Rotation Offset")] 
-    [SerializeField] private float _RotationOffsetX;
-    [SerializeField] private float _RotationOffsetY;
+    [SerializeField] private float _rotationOffsetX;
+    [SerializeField] private float _rotationOffsetY;
     
     private Transform _target;
 
@@ -29,8 +29,8 @@ namespace CameraLogic
 
       Vector3 rotationWithOffset = new Vector3
       (
-        _RotationOffsetX,
-        _RotationOffsetY
+        _rotationOffsetX,
+        _rotationOffsetY
       );
 
       transform.rotation = Quaternion.Euler(rotationWithOffset);

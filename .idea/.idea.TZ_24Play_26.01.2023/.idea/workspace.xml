@@ -44,6 +44,8 @@
     <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Hero/HeroMove.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 4/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 5/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 5/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 1 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 1 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../k-syndicate courses/Lesson 6/Part 2 + Homework/apprentices10/src/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,7 +129,8 @@
       <workItem from="1674829391896" duration="9107000" />
       <workItem from="1674850610356" duration="15661000" />
       <workItem from="1674899285063" duration="203000" />
-      <workItem from="1674899571409" duration="16291000" />
+      <workItem from="1674899571409" duration="16579000" />
+      <workItem from="1674983995574" duration="3434000" />
     </task>
     <servers />
   </component>

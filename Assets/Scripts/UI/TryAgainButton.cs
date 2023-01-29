@@ -1,10 +1,8 @@
-﻿using Data;
-using Services.GameStateMachine;
+﻿using Services.GameStateMachine;
 using Services.WindowService;
 using States;
 using UI.Windows;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
@@ -30,12 +28,7 @@ namespace UI
       ReloadLevel();
     }
 
-    private void ReloadLevel()
-    {
-      //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-      
-      //_stateMachine.Enter<LoadLevelState, string>(SceneNames.GameScene);
+    private void ReloadLevel() => 
       _stateMachine.ReEnter<LoadLevelState, string>();
-    }
   }
 }

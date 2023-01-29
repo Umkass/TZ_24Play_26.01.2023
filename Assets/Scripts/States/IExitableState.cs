@@ -2,6 +2,6 @@
 {
   public interface IExitableState
   {
-    void Exit();
+    public void Exit();
   }
 }

@@ -9,8 +9,8 @@ namespace Services.ResourcesLoader
   {
     private const string TracksPath = "Prefabs/Tracks";
     private const string WindowsPath = "Prefabs/UI/Windows";
-    private List<GameObject> _tracks = new List<GameObject>();
-    private Dictionary<WindowId, GameObject> _windows = new Dictionary<WindowId, GameObject>();
+    private List<GameObject> _tracks = new();
+    private Dictionary<WindowId, GameObject> _windows = new();
 
     public void LoadAll()
     {

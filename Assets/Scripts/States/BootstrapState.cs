@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using Const;
+using Services.AssetManagement;
 using Services.GameStateMachine;
 using Services.ResourcesLoader;
 using Services.TrackFactory;
@@ -32,10 +33,11 @@ namespace States
     private void RegisterServices()
     {
       IResourcesLoader resourcesLoader = new ResourcesLoader();
+      IAssetProvider assetProvider = new AssetProvider();
       resourcesLoader.LoadAll();
-      ITrackFactory trackFactory = new TrackFactory(resourcesLoader);
-      IWindowService windowService = new WindowService(resourcesLoader, _stateMachine);
-      _stateMachine.InitServices(trackFactory, windowService);
+      ITrackFactory trackFactory = new TrackFactory(resourcesLoader, assetProvider);
+      IWindowService windowService = new WindowService(resourcesLoader, _stateMachine, assetProvider);
+      _stateMachine.InitServices(trackFactory, windowService,assetProvider);
     }
   }
 }

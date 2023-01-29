@@ -1,7 +1,7 @@
 ﻿namespace States
 {
-  public interface IState: IExitableState
+  public interface IState : IExitableState
   {
-    void Enter();
+    public void Enter();
   }
 }

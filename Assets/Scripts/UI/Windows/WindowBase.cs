@@ -8,7 +8,7 @@ namespace UI.Windows
     protected IWindowService WindowService;
     public WindowId Id;
 
-    public void Construct(IWindowService windowService) => 
+    public void Construct(IWindowService windowService) =>
       WindowService = windowService;
   }
 }

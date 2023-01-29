@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Data;
+using Const;
+using Services.AssetManagement;
 using Services.GameStateMachine;
 using Services.ResourcesLoader;
 using UI.Windows;
@@ -10,25 +11,27 @@ namespace Services.WindowService
   public class WindowService : IWindowService
   {
     private readonly IResourcesLoader _resourcesLoader;
+    private readonly IAssetProvider _assetProvider;
     private readonly IGameStateMachine _stateMachine;
-    private Dictionary<WindowId, GameObject> _createdWindows = new Dictionary<WindowId, GameObject>();
+    private Dictionary<WindowId, GameObject> _createdWindows = new();
     private Transform _uiRoot;
 
-    public WindowService(IResourcesLoader resourcesLoader, IGameStateMachine stateMachine)
+    public WindowService(IResourcesLoader resourcesLoader, IGameStateMachine stateMachine, IAssetProvider assetProvider)
     {
       _resourcesLoader = resourcesLoader;
       _stateMachine = stateMachine;
+      _assetProvider = assetProvider;
     }
 
     public void Open(WindowId windowId)
     {
-      if (windowId == WindowId.None)
+      if (windowId == WindowId.None || _createdWindows.ContainsKey(windowId))
         return;
 
       if (_uiRoot == null)
         CreateUIRoot();
-      
-      GameObject window = Object.Instantiate(_resourcesLoader.GetWindow(windowId), _uiRoot);
+
+      GameObject window = _assetProvider.Instantiate(_resourcesLoader.GetWindow(windowId), _uiRoot);
 
       switch (windowId)
       {
@@ -36,10 +39,10 @@ namespace Services.WindowService
           window.GetComponent<WindowBase>().Construct(this);
           break;
         case WindowId.GameOverWindow:
-          window.GetComponent<GameOverWindow>().Construct(this,_stateMachine);
+          window.GetComponent<GameOverWindow>().Construct(this, _stateMachine);
           break;
       }
-      
+
       _createdWindows.Add(windowId, window);
     }
 
@@ -55,7 +58,7 @@ namespace Services.WindowService
     private void CreateUIRoot()
     {
       var prefab = Resources.Load<GameObject>(AssetPath.UIRootPath);
-      GameObject root = Object.Instantiate(prefab);
+      GameObject root = _assetProvider.Instantiate(prefab);
       _uiRoot = root.transform;
     }
   }

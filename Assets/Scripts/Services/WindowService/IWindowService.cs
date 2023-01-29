@@ -4,7 +4,7 @@ namespace Services.WindowService
 {
   public interface IWindowService : IService
   {
-    void Open(WindowId windowId);
-    void CloseWindow(WindowId windowId);
+    public void Open(WindowId windowId);
+    public void CloseWindow(WindowId windowId);
   }
 }

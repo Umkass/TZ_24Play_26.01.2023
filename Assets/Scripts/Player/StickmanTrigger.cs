@@ -1,4 +1,4 @@
-﻿using Data;
+﻿using Const;
 using UnityEngine;
 
 namespace Player
@@ -6,7 +6,7 @@ namespace Player
   public class StickmanTrigger : MonoBehaviour
   {
     [SerializeField] private PlayerDeath _playerDeath;
-    private bool _isEntered = false;
+    private bool _isEntered;
 
     private void OnTriggerEnter(Collider other)
     {

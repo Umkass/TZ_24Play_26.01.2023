@@ -1,4 +1,4 @@
-﻿namespace Data
+﻿namespace Const
 {
   public static class SceneNames
   {

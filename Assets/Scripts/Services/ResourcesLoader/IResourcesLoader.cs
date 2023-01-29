@@ -5,8 +5,8 @@ namespace Services.ResourcesLoader
 {
   public interface IResourcesLoader : IService
   {
-    void LoadAll();
-    GameObject GetRandomTrack();
-    GameObject GetWindow(WindowId windowId);
+    public void LoadAll();
+    public GameObject GetRandomTrack();
+    public GameObject GetWindow(WindowId windowId);
   }
 }

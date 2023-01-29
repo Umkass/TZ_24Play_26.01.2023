@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Services.AssetManagement;
 using Services.TrackFactory;
 using Services.WindowService;
 using States;
@@ -13,21 +14,23 @@ namespace Services.GameStateMachine
 
     public ITrackFactory TrackFactory;
     public IWindowService WindowService;
+    public IAssetProvider AssetProvider;
 
     public GameStateMachine(SceneLoader sceneLoader)
     {
       _states = new Dictionary<Type, IExitableState>
       {
         [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-        [typeof(LoadLevelState)] = new LoadLevelState(this,sceneLoader),
+        [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
         [typeof(GameLoopState)] = new GameLoopState(this),
       };
     }
 
-    public void InitServices(ITrackFactory trackFactory, IWindowService windowService)
+    public void InitServices(ITrackFactory trackFactory, IWindowService windowService, IAssetProvider assetProvider)
     {
       TrackFactory = trackFactory;
       WindowService = windowService;
+      AssetProvider = assetProvider;
     }
 
     public void Enter<TState>() where TState : class, IState
@@ -41,7 +44,7 @@ namespace Services.GameStateMachine
       TState state = ChangeState<TState>();
       state.Enter(payload);
     }
-    
+
     public void ReEnter<TState, TPayload>() where TState : class, IPayloadedState<TPayload>
     {
       TState state = ChangeState<TState>();
@@ -51,14 +54,14 @@ namespace Services.GameStateMachine
     private TState ChangeState<TState>() where TState : class, IExitableState
     {
       _activeState?.Exit();
-      
+
       TState state = GetState<TState>();
       _activeState = state;
-      
+
       return state;
     }
 
-    private TState GetState<TState>() where TState : class, IExitableState => 
+    private TState GetState<TState>() where TState : class, IExitableState =>
       _states[typeof(TState)] as TState;
   }
 }

@@ -42,9 +42,6 @@ namespace Player
     public void StopMoving() =>
       _isGameOver = true;
 
-    public void StartMoving() =>
-      _isGameOver = false;
-
     private void EditorInput()
     {
       if (Input.GetMouseButtonDown(0))

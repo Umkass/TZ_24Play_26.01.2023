@@ -1,4 +1,4 @@
-﻿using Data;
+﻿using Const;
 using UnityEngine;
 
 namespace Cube
