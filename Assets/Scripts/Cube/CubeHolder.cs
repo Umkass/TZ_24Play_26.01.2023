@@ -12,7 +12,8 @@ namespace Cube
     [SerializeField] private PlayerAnimator _animator;
     [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private PlayerDeath _playerDeath;
-    [SerializeField] private GameObject _collectCubeTextPrefab;
+    [SerializeField] private GameObject _cubePickupTextPrefab;
+    [SerializeField] private ParticleSystem _cubePickupFx;
     [SerializeField] private GameObject _trail;
     private List<CubeTrigger> _cubes = new();
     public bool isTrail = true;
@@ -50,8 +51,9 @@ namespace Cube
       ChangePlayerPositionY(1f);
 
       CreateCube(createPosition);
-      Instantiate(_collectCubeTextPrefab, _playerMove.transform.position + new Vector3(-0.3f, 4, 2), Quaternion.identity);
+      Instantiate(_cubePickupTextPrefab, _playerMove.transform.position + new Vector3(-0.3f, 4, 2), Quaternion.identity);
       
+      _cubePickupFx.Play();
       _animator.PlayIdle();
     }
 

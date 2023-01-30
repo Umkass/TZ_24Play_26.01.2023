@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8826951187986414741}
   - component: {fileID: 1440611277569086483}
   m_Layer: 5
-  m_Name: CollectCubeText
+  m_Name: CubePickupText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
