@@ -8,26 +8,35 @@ namespace Obstacle
   {
     private int _enteredNumber;
     private int _leavingNumber;
+    private bool _isExit;
+    private bool _isEnter;
     
     private void OnTriggerEnter(Collider other)
     {
-      if (other.TryGetComponent(out CubeTrigger cubeTrigger))
+      if (!_isEnter && other.TryGetComponent(out CubeTrigger cubeTrigger))
       {
+        _isEnter = true;
         StartCoroutine(Camera.main.GetComponent<CameraFollow>().Shake(0.15f, 0.4f));
         Handheld.Vibrate();
-        _enteredNumber = cubeTrigger.transform.parent.GetComponent<CubeHolder>().GetCubesCount();
+        CubeHolder cubeHolder;
+        cubeTrigger.transform.parent.TryGetComponent(out cubeHolder);
+        _enteredNumber = cubeHolder.GetCubesCount();
+        cubeHolder.isTrail = false;
       }
     }
 
     private void OnTriggerExit(Collider other)
     {
-      if (other.TryGetComponent(out CubeTrigger cubeTrigger))
+      if (!_isExit && other.TryGetComponent(out CubeTrigger cubeTrigger))
       {
-        CubeHolder cubeHolder = cubeTrigger.transform.parent.GetComponent<CubeHolder>();
+        _isExit = true;
+        CubeHolder cubeHolder;
+        cubeTrigger.transform.parent.TryGetComponent(out cubeHolder);
         _leavingNumber = cubeHolder.GetCubesCount();
         int value = _enteredNumber - _leavingNumber;
-        cubeHolder.ChangePlayerPositionY(-value);
         cubeHolder.RecalculateCubesPositions();
+        cubeHolder.ChangePlayerPositionY(-value);
+        cubeHolder.isTrail = true;
       }
     }
   }

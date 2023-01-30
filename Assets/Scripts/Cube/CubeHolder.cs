@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Const;
 using Player;
-using Services.AssetManagement;
 using UnityEngine;
 
 namespace Cube
@@ -13,10 +13,25 @@ namespace Cube
     [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private PlayerDeath _playerDeath;
     [SerializeField] private GameObject _collectCubeTextPrefab;
+    [SerializeField] private GameObject _trail;
     private List<CubeTrigger> _cubes = new();
+    public bool isTrail = true;
 
     private void Start() =>
       CreateCube(transform.position);
+
+    private void LateUpdate()
+    {
+      if (_cubes.Count == 0 || !isTrail)
+        return;
+
+      _trail.transform.position = new Vector3
+      (
+        _cubes.Last().transform.position.x,
+        _cubes.Last().transform.position.y - 0.49f,
+        _cubes.Last().transform.position.z
+      );
+    }
 
     public int GetCubesCount() =>
       _cubes.Count;
@@ -36,6 +51,7 @@ namespace Cube
 
       CreateCube(createPosition);
       Instantiate(_collectCubeTextPrefab, _playerMove.transform.position + new Vector3(-0.3f, 4, 2), Quaternion.identity);
+      
       _animator.PlayIdle();
     }
 
@@ -50,18 +66,28 @@ namespace Cube
     {
       if (_cubes.Count == 1)
       {
-        _cubes[0].transform.position = new Vector3(_playerMove.transform.position.x, transform.position.y, _playerMove.transform.position.z);
+        _cubes[0].transform.position = new Vector3
+        (
+          _playerMove.transform.position.x,
+          transform.position.y,
+          _playerMove.transform.position.z
+        );
         return;
       }
 
       for (int i = 0; i < _cubes.Count - 1; i++)
       {
         if (_cubes[i].transform.position.y - 1f != _cubes[i + 1].transform.position.y)
-          _cubes[i + 1].transform.position = new Vector3(_playerMove.transform.position.x, _cubes[i].transform.position.y - 1f, _playerMove.transform.position.z);
+          _cubes[i + 1].transform.position = new Vector3
+          (
+            _playerMove.transform.position.x,
+            _cubes[i].transform.position.y - 1f,
+            _playerMove.transform.position.z
+          );
       }
     }
 
-    public void ChangePlayerPositionY(float value) =>
+    public void ChangePlayerPositionY(float value) => 
       _playerMove.ChangePositionY(value);
 
     private void CreateCube(Vector3 createPosition)
