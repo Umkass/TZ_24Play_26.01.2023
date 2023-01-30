@@ -10,7 +10,6 @@ namespace Player
 
     private void OnTriggerEnter(Collider other)
     {
-      Debug.Log("Trigger " + other.gameObject);
       if ((other.CompareTag(Tags.Obstacle) || other.CompareTag(Tags.Track)) && !_isEntered)
       {
         _isEntered = true;

@@ -12,6 +12,7 @@ namespace Cube
     [SerializeField] private PlayerAnimator _animator;
     [SerializeField] private PlayerMove _playerMove;
     [SerializeField] private PlayerDeath _playerDeath;
+    [SerializeField] private GameObject _collectCubeTextPrefab;
     private List<CubeTrigger> _cubes = new();
 
     private void Start() =>
@@ -34,7 +35,7 @@ namespace Cube
       ChangePlayerPositionY(1f);
 
       CreateCube(createPosition);
-
+      Instantiate(_collectCubeTextPrefab, _playerMove.transform.position + new Vector3(-0.3f, 4, 2), Quaternion.identity);
       _animator.PlayIdle();
     }
 

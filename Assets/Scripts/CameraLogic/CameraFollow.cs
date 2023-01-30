@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace CameraLogic
@@ -14,10 +15,11 @@ namespace CameraLogic
     [SerializeField] private float _rotationOffsetY;
     
     private Transform _target;
+    private bool _isShaking;
 
     private void LateUpdate()
     {
-      if (_target == null)
+      if (_target == null || _isShaking)
         return;
 
       Vector3 positionWithOffset = new Vector3
@@ -35,6 +37,26 @@ namespace CameraLogic
 
       transform.rotation = Quaternion.Euler(rotationWithOffset);
       transform.position = positionWithOffset;
+    }
+    
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+      _isShaking = true;
+      Vector3 orignalPosition = transform.position;
+      float elapsed = 0f;
+        
+      while (elapsed < duration)
+      {
+        float x = Random.Range(-0.2f, 0.2f) * magnitude;
+        float y = Random.Range(-0.2f, 0.2f) * magnitude;
+
+        transform.position = new Vector3(transform.position.x + x, transform.position.y + y, _target.position.z + _positionOffsetZ);
+        elapsed += Time.deltaTime;
+        yield return 0;
+      }
+
+      _isShaking = false;
+      transform.position = orignalPosition;
     }
 
     public void Follow(Transform target) => 

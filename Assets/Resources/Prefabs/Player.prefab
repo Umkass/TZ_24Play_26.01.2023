@@ -168,6 +168,8 @@ MonoBehaviour:
   _animator: {fileID: 1914494211826931409}
   _playerMove: {fileID: 1914494211826931410}
   _playerDeath: {fileID: 1334700804962147781}
+  _collectCubeTextPrefab: {fileID: 8826951187986414746, guid: e3f3042afd3e879458c1e9b8535296e0,
+    type: 3}
 --- !u!1001 &5071996373292805370
 PrefabInstance:
   m_ObjectHideFlags: 0
